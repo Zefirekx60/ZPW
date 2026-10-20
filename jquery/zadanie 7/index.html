@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 7</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" 
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function(){
+        //1.Policz sume wszystkich cen i wpisz ja do #suma
+            let suma = 0;
+            $("li").each(function(){
+                suma += $(this).data("cena")
+            })
+            $("#suma").text(suma)
+
+        //2.Nadaj klase "drogie" kazdemu li, ktorego cena przekracza 20
+            $("li").each(function(){
+                if($(this).data("cena") > 20){
+                    $(this).addClass("drogie")
+                }   
+            })
+
+        //3.Pokoloruj co drugi element na szaro (index uzyj)
+            $("li").each(function(index, element){
+                if(index % 2 == 1){
+                    $(this).css("background-color", "grey")
+                }
+            })
+
+        //4.Znajdz pierwszy element drozszy niz 20, podswietl go i przerwij petle
+            $("li").each(function(){
+                if($(this).data("cena") > 20){
+                    $(this).css("background-color", "cyan")
+                    return false
+                }
+            })
+
+        });
+
+    </script>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <ul id="lista">
+        <li data-cena="10">Chleb</li>
+        <li data-cena="25">Ser</li>
+        <li data-cena="5">Woda</li>
+        <li data-cena="40">Szynka</li>
+    </ul>
+    <p id="suma"></p>
+    
+</body>
+</html>

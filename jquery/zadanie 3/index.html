@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona jquery</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" 
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            //sposob 1
+            //$("button").on("click", function(){
+                //console.log("Testujemy przycisk")
+            //})
+
+            //sposob 2
+            //$("button").click(function(){
+                //console.log("Testujemy przycisk drugim sposobem")
+            //})
+
+            //$("button").click(function(){
+                //alert("Czesc uzytkowniku!")
+            //})
+
+            $("button").click(function(){
+                $("#komunikat").prepend("hej! ")
+            })
+
+            $("#kwadrat").click(function(){
+                $("#kwadrat").css("background-color", "red") //zamienia kwadrat na inny kolor po kliknieciu
+            })
+
+            $("#resetuj").click(function(){
+                $("#kwadrat").css("background-color", "lightgray")
+                $("#komunikat").text("")
+            })
+
+        });
+    </script>
+
+<style>
+    #kwadrat { width: 150px; height: 150px; background: lightgray; }
+</style>
+</head>
+<body>
+    <button id="przywitaj">Przywitaj się</button><br>
+    <p id="komunikat"></p><br>
+    
+    <div id="kwadrat"></div><br>
+    
+    <button id="resetuj">Resetuj</button>
+ 
+</body>
+</html>

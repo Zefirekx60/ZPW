@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 10</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPgP6PhVattBxKcOWQB62pdZ3Oryrao=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            /*
+            $("#przycisk0").click(function(){
+                $("#text").hide()
+            })
+
+            $("#przycisk1").click(function(){
+                $("#text").show()
+            })
+
+            $("#przycisk2").click(function(){
+                $("#text").toggle()
+            })
+
+            $("#przycisk3").click(function(){
+                $("#text").slideUp()
+            })
+
+            $("#przycisk4").click(function(){
+                $("#text").slideDown()
+            })
+
+            $("#przycisk5").click(function(){
+                $("#text").slideToggle()
+            })
+            */
+
+            $("#pytanie1").submit(function(e){
+                e.preventDefault();
+
+                let wybraneID = $("input[name='odp']:checked").attr("id");
+                let correctAnswer = $("#a");
+
+                if(wybraneID == correctAnswer){
+                    $("#pytanie1 p").text("Poprawna odp: A! Warszawa jest stolicą Polski!").css("background-color", "green");
+                }else{
+                    $("#pytanie1 p").text("Zła odp: poprawna to A, ponieważ Warszawa jest stolicą Polski!").css("background-color", "red");
+                }
+            })
+        })
+    </script>
+    <style>
+        body{
+            background-color: rgb(83, 143, 143);
+        }
+    </style>
+</head>
+<body>
+    <!-- <p id="text">Kolega</p>
+
+    <button id="przycisk0">hide</button>
+    <button id="przycisk1">show</button>
+    <button id="przycisk2">toggle</button>
+    <button id="przycisk3">slideUp</button>
+    <button id="przycisk4">slideDown</button>
+    <button id="przycisk5">slideToggle</button> -->
+
+    <form id="pytanie1">
+        <p>Które miasto jest stolicą Polski?</p>
+
+        <label>
+            <input type="radio" value="wwa" name="odp" id="a">A. Warszawa
+        </label><br>
+
+        <label>
+            <input type="radio" value="berlin" name="odp" id="b">B. Berlin
+        </label><br>
+
+        <label>
+            <input type="radio" value="budapeszt" name="odp" id="c">C. Budapeszt
+        </label><br>
+
+        <label>
+            <input type="radio" value="praga" name="odp" id="d">D. Praga
+        </label><br><br>
+
+        <button id="wyslij" type="submit">Sprawdź wybór</button>
+    </form>
+</body>
+</html>

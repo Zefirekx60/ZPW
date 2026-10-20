@@ -1,0 +1,15 @@
+1. repozytorium to miejsce w chmurze w ktorym sa zapisywane pliki projektu oraz pelna historia 
+wszystkich wprowadzonych w nim zmian
+2. github to jest internetowa platforma sluząca do przechowywania projektow 
+najczesciej zespolowych w chmurze
+3. git to taki system ktory pozwala sledzic zmiany w plikach i zobaczyc ich historie 
+4. commit to zapisanie projektu lokalnego przed wyslaniem go (taki checkpoint)
+5. branch czyli taka oddzielna alternatywna galaz(main jest glowna galęzią) ktora nie wazne
+co w niej zrobisz nie wplynie ona na maina, bo jest kopią i mozna tam zmieniac i edytowac rzeczy
+6. checkout mozna wytlumaczyc to w taki sposob ze cofa sie do wczesniejszej wersji pliku oraz
+przelacza sie miedzy galeziami, np popelnilem jakis blad przed git branch bugFix to on sie cofa
+do tego miejsca
+7. merge tworzy nowy commit tak zwany merge commit ktory jest na kocu ilaczy sei z mainem
+oraz galezia
+8. rebase odczepia commity z jakiejs galezi i nastepnie je doczepia do maina w lini prostej
+na sam koniec

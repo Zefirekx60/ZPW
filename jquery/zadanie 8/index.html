@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 8</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" 
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function(){
+            //1.Po kliknieciu przycisku zmien tresc akapitu na "Nowy tekst"
+            $("#zmien").click(function(){
+                $("#tekst").text("Nowy tekst")
+            })
+
+            //2.Przycisk ma naprzemiennie chowac i pokazywac div. Poszukaj metody .toggle()
+            $("#przelacz").click(function(){
+                $("#pudelko").toggle();
+            })
+
+            //3.Po kliknieciu akapitu ma sie on podswiwtlic. Drugie klikniecie zdejmuje podswietlenie (.toggleClass())
+            $(".akapit").click(function(){
+                $(this).toggleClass(".podswietlony"); //nie dziala chyba?
+            })
+
+            //4.Po kliknieciu wpisz do wynik #wynik tekst "Cześć, <imie>!". Jesli pole
+                //jest puste, wypisz "Podaj imię"
+            $("#przywitaj").click(function(){
+                if($("#imie").val() < 1){
+                    $("#wynik").text("Podaj imię")
+                }else{
+                    $("#wynik").text("Cześć " + $("#imie").val() + "!")
+                }
+            })
+
+        })
+
+    </script>
+
+    <style>
+        .podswietlony {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="tekst">Stary tekst</p>
+    <button id="zmien">Zmień</button><br>
+
+    <div id="pudelko">Widzisz mnie</div>
+    <button id="przelacz">Pokaż/ukryj</button>
+
+    <p class="akapit">Kliknij mnie</p>
+
+    <input type="text" id="imie">
+    <button id="przywitaj">Przywitaj</button>
+    <p id="wynik"></p>
+</body>
+</html>
