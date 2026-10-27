@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zadanie 10</title>
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPgP6PhVattBxKcOWQB62pdZ3Oryrao=" crossorigin="anonymous"></script>
-    <script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" 
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <script>
         $(function(){
             /*
             $("#przycisk0").click(function(){
@@ -37,9 +38,9 @@
                 e.preventDefault();
 
                 let wybraneID = $("input[name='odp']:checked").attr("id");
-                let correctAnswer = $("#a");
+                let correctAnswer = "a";
 
-                if(wybraneID == correctAnswer){
+                if(wybraneID === correctAnswer){
                     $("#pytanie1 p").text("Poprawna odp: A! Warszawa jest stolicą Polski!").css("background-color", "green");
                 }else{
                     $("#pytanie1 p").text("Zła odp: poprawna to A, ponieważ Warszawa jest stolicą Polski!").css("background-color", "red");
