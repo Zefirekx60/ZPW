@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 13</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+    integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ30Ryrao="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+        $("#sprawdz").click(function(){
+            let imie = $("#imie").val().trim();
+
+            if(imie === ""){
+                $("#blad").text("Pole imie jest wymagane!")
+            }else{
+                $("#blad").text("Twoje imię to: " + imie)
+            }
+        })
+
+        $("#guzik").click(function(){
+            //.submit -> w function (e)
+            //e.preventDefault();
+            let nazwisko = $("#nazwisko").val().trim();
+
+            if(nazwisko === ""){
+                $("#glupek").text("Podaj nazwisko").css("color", "red")
+            }else{
+                $("#glupek").text("Wysłano formularz").css("color", "green")
+            }
+        })
+
+        $("#sprawdzWiek").click(function(){
+            let wiek = Number($("#wiek").val())
+            if(isNaN(wiek)){
+                $("#bladWiek").text("Wiek musi być liczbą!")
+            }else{
+                $("#bladWiek").text("Masz " + wiek + " lat")
+            }
+        })
+
+        $("#zapisz").click(function(){
+            let liczba = $("#liczba").val().trim()
+
+            if(isNaN(liczba)){
+                $("#wynikOcena").text("Ocena musi być liczbą od 1 do 6")
+            }else{
+                $("#wynikOcena").text("Zapisano ocenę: " + liczba)
+            }
+        })
+
+    })
+    </script>
+    <style>
+
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="text" id="imie">
+    <button id="sprawdz">Sprawdź</button>
+    <p id="blad"></p>
+    <hr>
+
+    <label for="nazwisko">Nazwisko</label><br>
+    <input type="text" id="nazwisko"><br>
+    <input type="submit" value="Wyślij" id="guzik">
+    <p id="glupek"></p>
+    <hr>
+
+    <input type="text" id="wiek">
+    <button id="sprawdzWiek">Sprawdź</button>
+    <p id="bladWiek"></p>
+    <hr>
+
+    <label for="liczba">Ocena</label><br>
+    <input type="number" id="liczba">
+    <button id="zapisz">Zapisz</button>
+    <p id="wynikOcena"></p>
+    <hr>
+
+</body>
+</html>
